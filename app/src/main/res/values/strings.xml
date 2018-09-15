@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">NewsApp</string>
+    <string name="title">ỨNG DỤNG ĐỌC TIN TỨC</string>
+    <string name="wish">Chúc bạn có những thông tin thật bổ ích</string>
+    <string name="trang_chu">Trang chủ</string>
+    <string name="thoi_su">Thời sự</string>
+    <string name="the_gioi">Thế giới</string>
+    <string name="kinh_doanh">Kinh doanh</string>
+    <string name="start_up">start up</string>
+    <string name="giai_tri">giải trí</string>
+    <string name="the_thao">thể thao</string>
+    <string name="phap_luat">pháp luật</string>
+    <string name="giao_duc">giáo dục</string>
+    <string name="suc_khoe">sức khỏe</string>
+    <string name="doi_song">đời sống</string>
+    <string name="du_lich">du lịch</string>
+    <string name="khoa_hoc">khoa học</string>
+    <string name="so_hoa">số hóa</string>
+    <string name="xe">xe</string>
+    <string name="cong_dong">cộng đồng</string>
+    <string name="tam_su">tâm sự</string>
+    <string name="cuoi">cười</string>
+    <string name="zing_news">Zing News</string>
 </resources>
