@@ -41,14 +41,23 @@ public class MainActivity extends AppCompatActivity {
     private void SetPagerView()
     {
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 1"),"Test Fragment 1");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 2"),"Test Fragment 2");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 3"),"Test Fragment 3");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 4"),"Test Fragment 4");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 5"),"Test Fragment 5");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 6"),"Test Fragment 6");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 7"),"Test Fragment 7");
-        pagerAdapter.AddFragment(new NewsFragment("Fragment 8"),"Test Fragment 8");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/tin-moi.rss"),"Tin mới ");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/thoi-su.rss"),"Thời sự");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/the-gioi.rss"),"Thế giới");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/kinh-doanh-tai-chinh.rss"),"Kinh doanh");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/phap-luat.rss"),"Pháp luật");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/xuat-ban.rss"),"Xuất bản");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/the-thao.rss"),"Thể thao");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/cong-nghe.rss"),"Công nghệ");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/oto-xe-may.rss"),"Ô tô – Xe máy");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/giai-tri.rss"),"Giải trí");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/am-nhac.rss"),"Âm nhạc");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/phim-anh.rss"),"Phim ảnh");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/thoi-trang.rss"),"Thời trang");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/song-tre.rss"),"Sống trẻ");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/giao-duc.rss"),"Giáo dục");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/du-lich.rss"),"Du lịch");
+        pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/suc-khoe.rss"),"Sức khoẻ");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
