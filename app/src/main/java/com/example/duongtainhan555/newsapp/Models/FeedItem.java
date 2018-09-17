@@ -6,16 +6,14 @@ public class FeedItem {
     private String pubDate;
     private String thumbnail;
     private String link;
-    private String category;
     private String name;
 
-    public FeedItem(String title, String description, String pubDate, String thumbnail, String link,String category,String name) {
+    public FeedItem(String title, String description, String pubDate, String thumbnail, String link,String name) {
         this.title = title;
         this.description = description;
         this.pubDate = pubDate;
         this.thumbnail = thumbnail;
         this.link = link;
-        this.category = category;
         this.name = name;
     }
 
@@ -38,8 +36,6 @@ public class FeedItem {
     public String getLink() {
         return link;
     }
-
-    public String getCategory(){return category;}
 
     public String getName(){return name;}
 }

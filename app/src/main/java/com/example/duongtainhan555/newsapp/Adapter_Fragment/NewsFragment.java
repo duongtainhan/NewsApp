@@ -33,10 +33,12 @@ public class NewsFragment extends Fragment {
     View view;
     CustomAdapter customAdapter;
     String url;
+    String page_name;
     ListView listView;
 
-    public NewsFragment(String url) {
+    public NewsFragment(String url, String page_name) {
         this.url = url;
+        this.page_name = page_name;
     }
 
     @Nullable
@@ -57,7 +59,7 @@ public class NewsFragment extends Fragment {
         return view;
     }
 
-    public class LoadRss extends AsyncTask<String, Void, ArrayList<FeedItem>> {
+    private class LoadRss extends AsyncTask<String, Void, ArrayList<FeedItem>> {
         @Override
         protected ArrayList<FeedItem> doInBackground(String... params) {
             String url_rss = params[0];
@@ -73,14 +75,21 @@ public class NewsFragment extends Fragment {
                     Document document = Jsoup.parse(description);
                     String imageUrl = "";
                     try {
-                        imageUrl = item.select("enclosure").get(0).attr("url");
+                        if(page_name.equals("zing_news"))
+                        {
+                            imageUrl = item.select("enclosure").get(0).attr("url");
+                        }
+                        else
+                            if(page_name.equals("vn_express"))
+                            {
+                                imageUrl = document.select("img").get(0).attr("src");
+                            }
                     } catch (Exception ex) {
                     }
 
                     //String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                     //String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                    feedItems.add(new FeedItem(title, title, pubDate, imageUrl, link, "Thể thao", "DANTRI"));
+                    feedItems.add(new FeedItem(title, title, pubDate, imageUrl, link, page_name));
                 }
             } catch (IOException e) {
                 e.printStackTrace();

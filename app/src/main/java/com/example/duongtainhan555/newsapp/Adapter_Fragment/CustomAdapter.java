@@ -36,7 +36,6 @@ public class CustomAdapter extends ArrayAdapter<FeedItem> {
             textView.setText(feedItem.getTitle());
             ImageView imageView = view.findViewById(R.id.imageView);
             Picasso.get().load(feedItem.getThumbnail()).into(imageView);
-
         }
         return view;
     }
