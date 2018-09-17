@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color2"
-        android:id="@+id/toolbar"
-        app:titleTextColor="@color/color1"
-        app:title="ZING NEWS">
-        <ImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:src="@drawable/ic_select_type"
-            android:id="@+id/imgSelectPage"/>
-    </android.support.v7.widget.Toolbar>
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="10"
-        android:orientation="horizontal"
-        android:background="@color/color2">
-        <ImageView
-            android:id="@+id/imgSelectType"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_select_type" />
-        <android.support.design.widget.TabLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="scrollable"
-            android:id="@+id/tabLayout"
-            app:tabSelectedTextColor="@color/color1"
-            app:tabTextColor="@color/color3"
-            app:tabIndicatorColor="@color/color1"
-            app:tabIndicatorHeight="@dimen/_4sdp"
-            android:background="@color/color2">
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fragment" />
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fragment"/>
-        </android.support.design.widget.TabLayout>
-    </LinearLayout>
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager"/>
+            android:background="@color/color_bg"
+            app:title="ZING NEWS"
+            app:titleTextColor="@color/color_title" />
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_bg"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_bg"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/color_title"
+                app:tabIndicatorHeight="@dimen/_4sdp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/color_text"
+                app:tabTextColor="@color/color_dim_text">
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fragment" />
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fragment" />
+            </android.support.design.widget.TabLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/boom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/_10sdp"
+        app:boom_inActionBar="false"
+        app:boom_button_color="@color/colorPrimary"
+        app:boom_button_pressed_color="@color/colorPrimary" />
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,10 +1,12 @@
-package com.example.duongtainhan555.newsapp;
+package com.example.duongtainhan555.newsapp.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.duongtainhan555.newsapp.R;
 
 public class WebActivity extends AppCompatActivity {
 

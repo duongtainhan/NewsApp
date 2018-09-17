@@ -1,4 +1,4 @@
-package com.example.duongtainhan555.newsapp;
+package com.example.duongtainhan555.newsapp.Adapter_Fragment;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.duongtainhan555.newsapp.Models.FeedItem;
+import com.example.duongtainhan555.newsapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

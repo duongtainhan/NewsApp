@@ -1,4 +1,4 @@
-package com.example.duongtainhan555.newsapp;
+package com.example.duongtainhan555.newsapp.Adapter_Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.duongtainhan555.newsapp.Activity.WebActivity;
+import com.example.duongtainhan555.newsapp.Models.FeedItem;
+import com.example.duongtainhan555.newsapp.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

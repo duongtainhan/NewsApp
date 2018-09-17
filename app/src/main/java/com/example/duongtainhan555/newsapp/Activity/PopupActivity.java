@@ -1,4 +1,4 @@
-package com.example.duongtainhan555.newsapp;
+package com.example.duongtainhan555.newsapp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import com.example.duongtainhan555.newsapp.R;
 
 public class PopupActivity extends Activity {
 

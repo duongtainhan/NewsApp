@@ -1,8 +1,10 @@
-package com.example.duongtainhan555.newsapp;
+package com.example.duongtainhan555.newsapp.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.duongtainhan555.newsapp.Activity.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -14,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SelectPageActivity.class);
         startActivity(intent);
         finish();
     }
