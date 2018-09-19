@@ -56,13 +56,13 @@ public class SelectPageActivity extends AppCompatActivity {
                             page_selected="nguoi_dua_tin";
                             break;
                         case 8:
-                            page_selected="tuoi_tre";
+                            page_selected="ngoi_sao";
                             break;
                         case 9:
                             page_selected="genk";
                             break;
                         case 10:
-                            page_selected="so_hoa";
+                            page_selected="so_ha";
                             break;
                         case 11:
                             page_selected="vov_vn";

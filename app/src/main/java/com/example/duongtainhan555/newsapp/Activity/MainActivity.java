@@ -81,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
             case "nguoi_dua_tin":
                 PageNguoiDuaTin();
                 break;
-            case "tuoi_tre":
-                PageTuoiTre();
+            case "ngoi_sao":
+                PageNgoiSao();
                 break;
             case "genk":
                 PageGenk();
                 break;
-            case "so_hoa":
-                PageSoHoa();
+            case "so_ha":
+                PageSoHa();
                 break;
             case "vov_vn":
                 PageVov();
@@ -302,10 +302,38 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
     }
-    private void PageTuoiTre()
+    private void PageNgoiSao()
     {
-        title="TUỔI TRẺ";
+        title="NGÔI SAO";
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/hau-truong.rss","ngoi_sao"),"Hậu trường");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/ben-le.rss","ngoi_sao"),"Bên lề");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thoi-cuoc.rss","ngoi_sao"),"Thời cuộc");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/phong-cach.rss","ngoi_sao"),"Phong cách");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thu-gian.rss","ngoi_sao"),"Thư giản");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/cuoi-hoi.rss","ngoi_sao"),"Cưới hỏi");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/showbiz-viet.rss","ngoi_sao"),"Showbiz Việt");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/chau-a.rss","ngoi_sao"),"Châu Á");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/hollywood.rss","ngoi_sao"),"HollyWood");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/khoe-dep.rss","ngoi_sao"),"Khỏe đẹp");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/24h.rss","ngoi_sao"),"24h");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/chuyen-la.rss","ngoi_sao"),"Chuyện lạ");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/hinh-su.rss","ngoi_sao"),"Hình sự");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thuong-truong.rss","ngoi_sao"),"Thương trường");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thoi-trang.rss","ngoi_sao"),"Thời trang");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/lam-dep.rss","ngoi_sao"),"Làm đẹp");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/trac-nghiem.rss","ngoi_sao"),"Trắc nghiệm");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/an-choi.rss","ngoi_sao"),"Ăn chơi");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/dan-choi.rss","ngoi_sao"),"Dân chơi");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/cuoi.rss","ngoi_sao"),"Cười");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/game.rss","ngoi_sao"),"Game");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/choi-blog.rss","ngoi_sao"),"Blog");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thi-anh.rss","ngoi_sao"),"Thi ảnh");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/miss.rss","ngoi_sao"),"Miss");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/co-dau.rss","ngoi_sao"),"Cô dâu");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/cam-nang.rss","ngoi_sao"),"Cẩm nang");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/anh-cuoi.rss","ngoi_sao"),"Ảnh cưới");
+        pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/chia-se.rss","ngoi_sao"),"Chia sẻ");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -314,13 +342,34 @@ public class MainActivity extends AppCompatActivity {
     {
         title="GENK";
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/trang-chu.rss","genk"),"Trang chủ");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/mmo.rss","genk"),"MMO");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/thi-truong.rss","genk"),"Thị trường");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/pc-console.rss","genk"),"PC Console");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/esport.rss","genk"),"Esport");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/mobile-social.rss","genk"),"Mobile");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/gaming-gear.rss","genk"),"Gaming Gear");
+        pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/manga-film.rss","genk"),"Manga Film");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
-    private void PageSoHoa()
+    private void PageSoHa()
     {
-        title="SỐ HÓA";
+        title="SOHA";
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/giai-tri.rss","so_ha"),"Giải trí");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/the-thao.rss","so_ha"),"Thể thao");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/thoi-su.rss","so_ha"),"Thời sự");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/phap-luat.rss","so_ha"),"Pháp luật");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/kinh-doanh.rss","so_ha"),"Kinh doanh");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/quoc-te.rss","so_ha"),"Quốc tế");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/song-khoe.rss","so_ha"),"Sống khỏe");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/quan-su.rss","so_ha"),"Quân sự");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/cu-dan-mang.rss","so_ha"),"Cư dân mạng");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/infographic.rss","so_ha"),"Info Graphic");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/kham-pha.rss","so_ha"),"Khám phá");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/doi-song.rss","so_ha"),"Đời sống");
+        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/apec-viet-nam-2017.rss","so_hoa"),"Apec Việt Nam");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -328,6 +377,22 @@ public class MainActivity extends AppCompatActivity {
     {
         title="VOV.VN";
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/chinh-tri-209.rss","vov"),"Chính trị");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/doi-song-218.rss","vov"),"Đời sống");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/vov-binh-luan-352.rss","vov"),"Bình luận");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/xa-hoi-314.rss","vov"),"Xã hội");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/kinh-te-212.rss","vov"),"Kinh tế");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/the-gioi-213.rss","vov"),"Thế giới");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/phap-luat-237.rss","vov"),"Pháp luật");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/quan-su-quoc-phong-445.rss","vov"),"Quân sự");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/cong-nghe-449.rss","vov"),"Công nghệ");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/the-thao-214.rss","vov"),"Thể thao");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/van-hoa-giai-tri-215.rss","vov"),"Giải trí");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/nguoi-viet-287.rss","vov"),"Người việt");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/suc-khoe-311.rss","vov"),"Sức khỏe");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/media-357.rss","vov"),"Media");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/oto-xe-may-423.rss","vov"),"Xe");
+        pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/e-magazine-470.rss","vov"),"E-Magazine");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
