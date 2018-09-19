@@ -16,9 +16,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<FeedItem> {
-
-    public CustomAdapter(@NonNull Context context, int resource, @NonNull List<FeedItem> objects) {
+public class AdapterOtherType extends ArrayAdapter<FeedItem> {
+    public AdapterOtherType(@NonNull Context context, int resource, @NonNull List<FeedItem> objects) {
         super(context, resource, objects);
     }
 
@@ -28,17 +27,15 @@ public class CustomAdapter extends ArrayAdapter<FeedItem> {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            view =  inflater.inflate(R.layout.layout_news, null);
+            view =  inflater.inflate(R.layout.layout_other_type, null);
         }
         FeedItem feedItem = getItem(position);
         if (feedItem != null) {
             // Anh xa + Gan gia tri
-            TextView txtTitle = view.findViewById(R.id.txtTitle);
+            TextView txtTitle = view.findViewById(R.id.txtTypeTitle);
             txtTitle.setText(feedItem.getTitle());
-            ImageView imgThumbnail = view.findViewById(R.id.imgThumbnail);
+            ImageView imgThumbnail = view.findViewById(R.id.imgTypeThumbnail);
             Picasso.get().load(feedItem.getThumbnail()).into(imgThumbnail);
-            TextView txtDescription = view.findViewById(R.id.txtDescription);
-            txtDescription.setText(feedItem.getDescription());
         }
         return view;
     }

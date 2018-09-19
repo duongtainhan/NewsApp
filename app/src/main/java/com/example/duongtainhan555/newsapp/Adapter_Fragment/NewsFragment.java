@@ -34,6 +34,7 @@ public class NewsFragment extends Fragment {
     private List<FeedItem> feedItems = new ArrayList<>();
     View view;
     CustomAdapter customAdapter;
+    AdapterOtherType adapterOtherType;
     String url;
     String page_name;
     ListView listView;
@@ -113,8 +114,16 @@ public class NewsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<FeedItem> feedItems) {
-            customAdapter = new CustomAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
-            listView.setAdapter(customAdapter);
+            if(page_name.equals("dan_tri")||page_name.equals("so_ha")||page_name.equals("vov"))
+            {
+                adapterOtherType = new AdapterOtherType(getActivity(),android.R.layout.simple_list_item_1, feedItems);
+                listView.setAdapter(adapterOtherType);
+            }
+            else
+            {
+                customAdapter = new CustomAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+                listView.setAdapter(customAdapter);
+            }
             super.onPostExecute(feedItems);
         }
     }
