@@ -13,7 +13,6 @@ import com.example.duongtainhan555.newsapp.R;
 
 public class PopupActivity extends Activity {
 
-    ImageView imgZingNews;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

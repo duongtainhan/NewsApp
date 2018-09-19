@@ -369,7 +369,6 @@ public class MainActivity extends AppCompatActivity {
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/infographic.rss","so_ha"),"Info Graphic");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/kham-pha.rss","so_ha"),"Khám phá");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/doi-song.rss","so_ha"),"Đời sống");
-        pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/apec-viet-nam-2017.rss","so_hoa"),"Apec Việt Nam");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }

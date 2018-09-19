@@ -41,8 +41,8 @@ public class NewsFragment extends Fragment {
     public NewsFragment(String url, String page_name) {
         this.url = url;
         this.page_name = page_name;
-        Log.d("AAA",this.url);
-        Log.d("BBB",this.page_name);
+        Log.d("AAA", this.url);
+        Log.d("BBB", this.page_name);
     }
 
     @Nullable
@@ -136,8 +136,8 @@ public class NewsFragment extends Fragment {
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -162,8 +162,8 @@ public class NewsFragment extends Fragment {
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -188,8 +188,8 @@ public class NewsFragment extends Fragment {
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -199,14 +199,42 @@ public class NewsFragment extends Fragment {
     private void SetPage24h(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
+
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text().replaceAll("&#34;", "\"");
+                title = title.replaceAll("&#39;", "\'");
                 String link = item.select("link").text();
-                String description = item.select("description").html().replaceAll("&lt;", "<");
-                description = description.replaceAll("&gt;", ">");
-                description = description.replaceAll("&amp;amp;#34;", "\"");
-                description = description.replaceAll("<br />", "");
+                String description = item.select("description").html();
+                String pubDate = item.select("pubDate").text();
+                Document document = Jsoup.parse(description);
+                Log.d("IMG", document.toString());
+                String imageUrl = "";
+                try {
+                    imageUrl = document.select("img").get(0).attr("src");
+
+                } catch (Exception ex) {
+                }
+
+                String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
+                String descriptionMain = descrizione.replaceAll("br2n", "\n");
+
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void SetPageKenh14(String url_rss) {
+        try {
+            Document doc = Jsoup.connect(url_rss).get();
+            Elements elements = doc.select("item");
+            for (Element item : elements) {
+                String title = item.select("title").text();
+                String link = item.select("link").text();
+                String description = item.select("description").text();
                 String pubDate = item.select("pubDate").text();
                 Document document = Jsoup.parse(description);
                 String imageUrl = "";
@@ -217,18 +245,15 @@ public class NewsFragment extends Fragment {
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
                 if (!imageUrl.isEmpty())
                     feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
-
-
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void SetPageKenh14(String url_rss)
-    {
+
+    private void SetPageVietNam(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -241,44 +266,20 @@ public class NewsFragment extends Fragment {
                 String imageUrl = "";
                 try {
                     imageUrl = document.select("img").get(0).attr("src");
-                }catch (Exception ex){}
+                } catch (Exception ex) {
+                }
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link,page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void SetPageVietNam(String url_rss)
-    {
-        try {
-            Document doc = Jsoup.connect(url_rss).get();
-            Elements elements = doc.select("item");
-            for (Element item : elements) {
-                String title = item.select("title").text();
-                String link = item.select("link").text();
-                String description = item.select("description").text();
-                String pubDate = item.select("pubDate").text();
-                Document document = Jsoup.parse(description);
-                String imageUrl = "";
-                try {
-                    imageUrl = document.select("img").get(0).attr("src");
-                }catch (Exception ex){}
 
-                String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
-                String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link,page_name));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private void SetPageDoiSong(String url_rss)
-    {
+    private void SetPageDoiSong(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -291,18 +292,19 @@ public class NewsFragment extends Fragment {
                 String imageUrl = "";
                 try {
                     imageUrl = document.select("img").get(0).attr("src");
-                }catch (Exception ex){}
+                } catch (Exception ex) {
+                }
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void SetPageNguoiDuaTin(String url_rss)
-    {
+
+    private void SetPageNguoiDuaTin(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -320,15 +322,16 @@ public class NewsFragment extends Fragment {
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "");
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-    private void SetPageTuoiTre(String url_rss)
-    {
+
+    private void SetPageTuoiTre(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -343,22 +346,22 @@ public class NewsFragment extends Fragment {
                 String imageUrl = "";
                 try {
                     imageUrl = document.select("img").get(0).attr("src");
-                    imageUrl = imageUrl.replaceAll("80_50","200_113");
+                    imageUrl = imageUrl.replaceAll("80_50", "200_113");
                 } catch (Exception ex) {
                 }
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-    private void SetPageGenk(String url_rss)
-    {
+
+    private void SetPageGenk(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -371,19 +374,20 @@ public class NewsFragment extends Fragment {
                 String imageUrl = "";
                 try {
                     imageUrl = document.select("img").get(0).attr("src");
-                }catch (Exception ex){}
+                } catch (Exception ex) {
+                }
 
                 String descrizione = Jsoup.parse(description.replaceAll("(?i)<br[^>]*>", "br2n")).text();
                 String descriptionMain = descrizione.replaceAll("br2n", "\n");
-
-                feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link,page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void SetPageSoHa(String url_rss)
-    {
+
+    private void SetPageSoHa(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -398,15 +402,15 @@ public class NewsFragment extends Fragment {
                     imageUrl = document.select("img").get(0).attr("src");
                 } catch (Exception ex) {
                 }
-
-                feedItems.add(new FeedItem(title, "", pubDate, imageUrl, link, page_name));
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, "", pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void SetPageVov(String url_rss)
-    {
+
+    private void SetPageVov(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");
@@ -421,8 +425,10 @@ public class NewsFragment extends Fragment {
                     imageUrl = document.select("img").get(0).attr("src");
                 } catch (Exception ex) {
                 }
-
-                feedItems.add(new FeedItem(title, "", pubDate, imageUrl, link, page_name));
+                String descrizione = Jsoup.parse(description.replaceAll("(?i)", "br2n")).text();
+                String descriptionMain = descrizione.replaceAll("br2n", "");
+                if (!imageUrl.isEmpty())
+                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();

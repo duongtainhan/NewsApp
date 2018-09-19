@@ -45,15 +45,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                         android:text="ZING NEWS"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -85,15 +85,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:gravity="center"
@@ -109,7 +109,7 @@
                         android:text="VN EXPRESS"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -128,15 +128,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                         android:text="DÂN TRÍ"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -168,31 +168,31 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/hai_tu_gio"
+                        android:src="@drawable/tinh_te_icon"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:text="24H"
+                        android:text="TINH TẾ"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
@@ -211,15 +211,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:gravity="center"
@@ -235,7 +235,7 @@
                         android:text="KÊNH 14"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -251,15 +251,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -275,7 +275,7 @@
                         android:text="VIETNAM.NET"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
@@ -290,15 +290,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/_16sdp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="@dimen/_16sdp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -314,7 +314,7 @@
                         android:text="ĐỜI SỐNG PHÁP LUẬT"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -329,15 +329,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
@@ -353,7 +353,7 @@
                         android:text="NGƯỜI ĐƯA TIN"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -368,15 +368,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -392,7 +392,7 @@
                         android:text="NGÔI SAO"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -407,15 +407,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -431,7 +431,7 @@
                         android:text="GENK"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -446,15 +446,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -470,7 +470,7 @@
                         android:text="SỐ HÓA"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/_25sdp"
                         android:layout_width="wrap_content"
@@ -485,15 +485,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardElevation="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_margin="@dimen/_3sdp"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="wrap_content"
@@ -510,7 +510,7 @@
                         android:layout_marginTop="@dimen/_25sdp"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/_14ssp"
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
