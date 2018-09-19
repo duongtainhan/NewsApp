@@ -425,10 +425,8 @@ public class NewsFragment extends Fragment {
                     imageUrl = document.select("img").get(0).attr("src");
                 } catch (Exception ex) {
                 }
-                String descrizione = Jsoup.parse(description.replaceAll("(?i)", "br2n")).text();
-                String descriptionMain = descrizione.replaceAll("br2n", "");
                 if (!imageUrl.isEmpty())
-                    feedItems.add(new FeedItem(title, descriptionMain, pubDate, imageUrl, link, page_name));
+                    feedItems.add(new FeedItem(title, "", pubDate, imageUrl, link, page_name));
             }
         } catch (IOException e) {
             e.printStackTrace();
