@@ -64,8 +64,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/_10sdp"
         app:boom_inActionBar="false"
-        app:boom_button_color="@color/colorPrimary"
-        app:boom_button_pressed_color="@color/colorPrimary" />
+        app:boom_button_color="@color/color_blue"
+        app:boom_button_pressed_color="@color/color_title" />
 
 
 </android.support.design.widget.CoordinatorLayout>

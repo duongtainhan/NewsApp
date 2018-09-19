@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.duongtainhan555.newsapp.Activity.MainActivity;
-
 public class SplashActivity extends AppCompatActivity {
 
     @Override

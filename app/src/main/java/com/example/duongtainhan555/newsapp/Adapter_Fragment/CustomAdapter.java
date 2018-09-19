@@ -32,10 +32,12 @@ public class CustomAdapter extends ArrayAdapter<FeedItem> {
         FeedItem feedItem = getItem(position);
         if (feedItem != null) {
             // Anh xa + Gan gia tri
-            TextView textView = view.findViewById(R.id.textView);
-            textView.setText(feedItem.getTitle());
-            ImageView imageView = view.findViewById(R.id.imageView);
-            Picasso.get().load(feedItem.getThumbnail()).into(imageView);
+            TextView txtTitle = view.findViewById(R.id.txtTitle);
+            txtTitle.setText(feedItem.getTitle());
+            ImageView imgThumbnail = view.findViewById(R.id.imgThumbnail);
+            Picasso.get().load(feedItem.getThumbnail()).into(imgThumbnail);
+            TextView txtDescription = view.findViewById(R.id.txtDescription);
+            txtDescription.setText(feedItem.getDescription());
         }
         return view;
     }
