@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_below="@id/relative"
+    android:background="@color/transparent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relative"
+        android:layout_alignParentTop="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout"
+            android:background="@color/color_blue">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_type"
+                android:padding="@dimen/_20sdp"
+                android:textSize="@dimen/_15ssp"
+                android:layout_centerInParent="true"
+                android:id="@+id/txtTitleSelectType"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <ListView
+            android:layout_below="@id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            android:id="@+id/listTypeNews"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@id/relative">
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ok"
+            android:id="@+id/imgOK"
+            android:onClick="ClickOKButton"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="@dimen/_20ssp"
+            android:layout_toRightOf="@id/imgOK"/>
+    </RelativeLayout>
+
+</RelativeLayout>

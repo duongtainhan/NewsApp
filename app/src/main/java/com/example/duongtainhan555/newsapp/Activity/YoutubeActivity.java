@@ -115,6 +115,6 @@ public class YoutubeActivity extends AppCompatActivity {
     }
 
     private void handleSuccess() {
-        Toast.makeText(this, "Ket noi thanh cong! ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Kết nối thành công! ", Toast.LENGTH_SHORT).show();
     }
 }

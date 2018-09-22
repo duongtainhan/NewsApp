@@ -1,5 +1,6 @@
 package com.example.duongtainhan555.newsapp.Activity;
 
+import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -7,10 +8,15 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.NewsFragment;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.PagerAdapter;
+import com.example.duongtainhan555.newsapp.Adapter_Fragment.TypeAdapter;
+import com.example.duongtainhan555.newsapp.Interface.PositionListView;
+import com.example.duongtainhan555.newsapp.Models.TypeItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Types.BoomType;
@@ -18,8 +24,10 @@ import com.nightonke.boommenu.Types.ButtonType;
 import com.nightonke.boommenu.Types.PlaceType;
 import com.nightonke.boommenu.Util;
 
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements PositionListView {
 
 
     private Toolbar toolbar;
@@ -28,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean init = false;
     private BoomMenuButton boomMenuButton;
     private String title="";
+    private Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         boomMenuButton = findViewById(R.id.boom);
+
 
     }
     private void SetPage()
@@ -429,14 +439,34 @@ public class MainActivity extends AppCompatActivity {
                 .onSubButtonClick(new BoomMenuButton.OnSubButtonClickListener() {
                     @Override
                     public void onClick(int buttonIndex) {
-                        String click = "On Click "+String.valueOf(buttonIndex);
-                        Toast.makeText(
-                                MainActivity.this,
-                                click,
-                                Toast.LENGTH_SHORT).show();
+                        if(buttonIndex==1)
+                        {
+                            FilterTypeNews();
+                        }
                     }
                 })
                 .init(boomMenuButton);
     }
+    private void FilterTypeNews()
+    {
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.dialog_type_news);
+        ListView listType = dialog.findViewById(R.id.listTypeNews);
+        ArrayList<TypeItem> arrTypeNews = new ArrayList<>();
+        TypeItem typeItem = new TypeItem();
+        typeItem.setTypeNews("Test thu");
+        arrTypeNews.add(typeItem);
+        TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this,R.layout.layout_type_news,arrTypeNews);
+        listType.setAdapter(typeAdapter);
+        dialog.show();
+    }
 
+    @Override
+    public void PosList(int pos) {
+        Toast.makeText(this, pos+"", Toast.LENGTH_SHORT).show();
+    }
+
+    public void ClickOKButton(View view) {
+        dialog.cancel();
+    }
 }

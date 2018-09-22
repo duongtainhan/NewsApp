@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.duongtainhan555.newsapp.Activity.WebActivity;
 import com.example.duongtainhan555.newsapp.Models.FeedItem;
@@ -33,7 +32,7 @@ public class NewsFragment extends Fragment {
 
     private List<FeedItem> feedItems = new ArrayList<>();
     View view;
-    CustomAdapter customAdapter;
+    NewsAdapter newsAdapter;
     AdapterOtherType adapterOtherType;
     String url;
     String page_name;
@@ -121,8 +120,8 @@ public class NewsFragment extends Fragment {
             }
             else
             {
-                customAdapter = new CustomAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
-                listView.setAdapter(customAdapter);
+                newsAdapter = new NewsAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+                listView.setAdapter(newsAdapter);
             }
             super.onPostExecute(feedItems);
         }
