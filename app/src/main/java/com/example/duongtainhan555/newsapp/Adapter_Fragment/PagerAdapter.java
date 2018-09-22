@@ -38,10 +38,4 @@ public class PagerAdapter extends FragmentPagerAdapter {
         fragmentList.add(fragment);
         fragmentListTitle.add(title);
     }
-    public void RemoveFragment(int pos)
-    {
-        fragmentList.remove(pos);
-        fragmentListTitle.remove(pos);
-
-    }
 }

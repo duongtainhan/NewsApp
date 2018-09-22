@@ -2,7 +2,6 @@ package com.example.duongtainhan555.newsapp.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -11,8 +10,8 @@ import android.widget.Toast;
 
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.VideoAdapter;
 import com.example.duongtainhan555.newsapp.Interface.RequestInterface;
-import com.example.duongtainhan555.newsapp.Models.Item;
-import com.example.duongtainhan555.newsapp.Models.VideoItem;
+import com.example.duongtainhan555.newsapp.Models.Video.Item;
+import com.example.duongtainhan555.newsapp.Models.Video.VideoItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 

@@ -14,7 +14,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.duongtainhan555.newsapp.Activity.YoutubeActivity;
-import com.example.duongtainhan555.newsapp.Models.FeedItem;
+import com.example.duongtainhan555.newsapp.Models.News.FeedItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.squareup.picasso.Picasso;
 

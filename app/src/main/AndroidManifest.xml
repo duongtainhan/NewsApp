@@ -16,9 +16,6 @@
             android:name=".Activity.MainActivity"
             android:hardwareAccelerated="true" />
         <activity
-            android:name=".Activity.PopupActivity"
-            android:theme="@style/AppTheme.Popup" />
-        <activity
             android:name=".Activity.SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>

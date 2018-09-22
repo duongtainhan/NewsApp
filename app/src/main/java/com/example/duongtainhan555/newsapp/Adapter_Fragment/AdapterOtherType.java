@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.duongtainhan555.newsapp.Models.FeedItem;
+import com.example.duongtainhan555.newsapp.Models.News.FeedItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.squareup.picasso.Picasso;
 

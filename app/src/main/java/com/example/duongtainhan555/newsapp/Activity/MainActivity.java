@@ -7,16 +7,18 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.NewsFragment;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.PagerAdapter;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.TypeAdapter;
 import com.example.duongtainhan555.newsapp.Interface.PositionListView;
-import com.example.duongtainhan555.newsapp.Models.TypeItem;
+import com.example.duongtainhan555.newsapp.Models.News.TypeItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Types.BoomType;
@@ -25,7 +27,6 @@ import com.nightonke.boommenu.Types.PlaceType;
 import com.nightonke.boommenu.Util;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements PositionListView {
@@ -425,18 +426,21 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     {
         dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_type_news);
-        ListView listType = dialog.findViewById(R.id.listTypeNews);
+        RecyclerView recyclerView = dialog.findViewById(R.id.recyclerView);
         ArrayList<TypeItem> arrTypeNews = new ArrayList<>();
 
-        for(int i=0; i <=12; i++)
+        for(int i=0; i <=10; i++)
         {
             TypeItem typeItem = new TypeItem();
-            typeItem.setTypeNews("Test thu");
+            typeItem.setTypeNews("View "+i);
             arrTypeNews.add(typeItem);
         }
 
-        TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this,R.layout.layout_type_news,arrTypeNews);
-        listType.setAdapter(typeAdapter);
+        TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this,arrTypeNews);
+        GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this,2);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(typeAdapter);
         dialog.show();
     }
 
@@ -458,11 +462,13 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
 
     public void ClickOKButton(View view) {
         dialog.cancel();
-        for(int i=0;i<arrPos.size();i++)
-        {
-            pagerAdapter.RemoveFragment(arrPos.get(i));
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        if(!arrPos.isEmpty()) {
+            for (int i = 1; i <= arrPos.size(); i++) {
+                //pagerAdapter.AddFragment();
+            }
+            viewPager.setAdapter(pagerAdapter);
+            tabLayout.setupWithViewPager(viewPager);
         }
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
 }

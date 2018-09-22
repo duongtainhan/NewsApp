@@ -1,6 +1,6 @@
 package com.example.duongtainhan555.newsapp.Interface;
 
-import com.example.duongtainhan555.newsapp.Models.VideoItem;
+import com.example.duongtainhan555.newsapp.Models.Video.VideoItem;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

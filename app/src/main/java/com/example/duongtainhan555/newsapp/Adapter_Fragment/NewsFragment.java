@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.duongtainhan555.newsapp.Activity.WebActivity;
-import com.example.duongtainhan555.newsapp.Models.FeedItem;
+import com.example.duongtainhan555.newsapp.Models.News.FeedItem;
 import com.example.duongtainhan555.newsapp.R;
 
 import org.jsoup.Jsoup;

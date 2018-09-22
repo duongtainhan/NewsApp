@@ -26,11 +26,11 @@
                 android:id="@+id/txtTitleSelectType"
                 android:textColor="#ffffff"/>
         </RelativeLayout>
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_below="@id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
-            android:id="@+id/listTypeNews"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.duongtainhan555.newsapp.Models;
+package com.example.duongtainhan555.newsapp.Models.News;
 
 public class FeedItem {
     private String title;

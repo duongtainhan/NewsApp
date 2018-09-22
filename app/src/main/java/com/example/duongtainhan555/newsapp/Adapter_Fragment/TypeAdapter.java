@@ -2,52 +2,65 @@ package com.example.duongtainhan555.newsapp.Adapter_Fragment;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.example.duongtainhan555.newsapp.Interface.PositionListView;
-import com.example.duongtainhan555.newsapp.Models.TypeItem;
+import com.example.duongtainhan555.newsapp.Models.News.TypeItem;
 import com.example.duongtainhan555.newsapp.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class TypeAdapter extends ArrayAdapter<TypeItem> {
+
+public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
+    Context context;
+    ArrayList<TypeItem> arrTypeNews;
     PositionListView positionListView;
-    public TypeAdapter(@NonNull Context context, int resource, @NonNull List objects) {
-        super(context, resource, objects);
+
+    public TypeAdapter(Context context, ArrayList<TypeItem> arrTypeNews) {
+        this.context = context;
+        this.arrTypeNews = arrTypeNews;
     }
+
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = convertView;
-        if (view == null) {
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            view =  inflater.inflate(R.layout.layout_type_news, null);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.layout_type_news,viewGroup,false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        TypeItem typeItem = arrTypeNews.get(i);
+        viewHolder.txtTypeNews.setText(typeItem.getTypeNews());
+        viewHolder.cbTypeNews.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                positionListView = (PositionListView) buttonView.getContext();
+                positionListView.PosList(viewHolder.getAdapterPosition());
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrTypeNews.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView txtTypeNews;
+        CheckBox cbTypeNews;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtTypeNews = itemView.findViewById(R.id.txtTypeNews);
+            cbTypeNews = itemView.findViewById(R.id.cbTypeNews);
         }
-        TypeItem typeItem = getItem(position);
-        if(typeItem!=null)
-        {
-            TextView txtTypeNews = view.findViewById(R.id.txtTypeNews);
-            txtTypeNews.setText(typeItem.getTypeNews());
-            CheckBox cbTypeNews = view.findViewById(R.id.cbTypeNews);
-            cbTypeNews.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(cbTypeNews.isChecked())
-                    {
-                        positionListView = (PositionListView) getContext();
-                        positionListView.PosList(position);
-                    }
-                }
-            });
-        }
-        return view;
     }
 }
