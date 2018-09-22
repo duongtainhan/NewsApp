@@ -25,6 +25,7 @@ import com.nightonke.boommenu.Types.PlaceType;
 import com.nightonke.boommenu.Util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements PositionListView {
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     private BoomMenuButton boomMenuButton;
     private String title="";
     private Dialog dialog;
+    private PagerAdapter pagerAdapter;
+    private ArrayList<Integer> arrPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         boomMenuButton = findViewById(R.id.boom);
-
-
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        arrPos = new ArrayList<>();
     }
     private void SetPage()
     {
@@ -105,11 +108,12 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
                 break;
         }
         toolbar.setTitle(title);
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageZingNews()
     {
         title="ZING NEWS";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/tin-moi.rss","zing_news"),"Tin mới ");
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/thoi-su.rss","zing_news"),"Thời sự");
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/the-gioi.rss","zing_news"),"Thế giới");
@@ -127,13 +131,11 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/giao-duc.rss","zing_news"),"Giáo dục");
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/du-lich.rss","zing_news"),"Du lịch");
         pagerAdapter.AddFragment(new NewsFragment("https://news.zing.vn/rss/suc-khoe.rss","zing_news"),"Sức khoẻ");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+
     }
     private void PageVnExpress()
     {
         title="VN EXPRESS";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/tin-moi-nhat.rss","vn_express"),"Tin mới");
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/thoi-su.rss","vn_express"),"Thời sự");
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/the-gioi.rss","vn_express"),"Thế giới");
@@ -152,13 +154,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/cong-dong.rss","vn_express"),"Cộng đồng");
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/tam-su.rss","vn_express"),"Tâm sự");
         pagerAdapter.AddFragment(new NewsFragment("https://vnexpress.net/rss/cuoi.rss","vn_express"),"Cười");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageDanTri()
     {
         title="DÂN TRÍ";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/trangchu.rss","dan_tri"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/suc-khoe.rss","dan_tri"),"Sức khỏe");
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/xa-hoi.rss","dan_tri"),"Xã hội");
@@ -185,13 +184,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/doi-song.rss","dan_tri"),"Đời sống");
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/khoa-hoc-cong-nghe.rss","dan_tri"),"Khoa học");
         pagerAdapter.AddFragment(new NewsFragment("https://dantri.com.vn/sea-games-28.rss","dan_tri"),"Sea game");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void Page24h()
     {
         title="24H";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/trangchu24h.rss","24h"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/tintuctrongngay.rss","24h"),"Trong ngày");
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/bongda.rss","24h"),"Bóng đá");
@@ -217,13 +213,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/tintucquocte.rss","24h"),"Thế giới");
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/doisongshowbiz.rss","24h"),"Đời sống");
         pagerAdapter.AddFragment(new NewsFragment("https://www.24h.com.vn/upload/rss/giaitri.rss","24h"),"Giải trí");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageKenh14()
     {
         title="KÊNH 14";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/trang-chu.rss","kenh_14"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/tv-show.rss","kenh_14"),"TV Show");
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/cine.rss","kenh_14"),"Cine");
@@ -235,13 +228,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/tram-yeu.rss","kenh_14"),"Trạm yêu");
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/la-cool.rss","kenh_14"),"Cool");
         pagerAdapter.AddFragment(new NewsFragment("https://kenh14.vn/hoc-duong.rss","kenh_14"),"Học đường");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageVietNameNet()
     {
         title="VIETNAM.NET";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/home.rss","vietnam_net"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/tin-moi-nong.rss","vietnam_net"),"Tin mới nóng");
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/tin-noi-bat.rss","vietnam_net"),"Tin nổi bật");
@@ -259,13 +249,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/ban-doc.rss","vietnam_net"),"Bạn đọc");
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/tuanvietnam.rss","vietnam_net"),"Tuần việt nam");
         pagerAdapter.AddFragment(new NewsFragment("http://vietnamnet.vn/rss/goc-nhin-thang.rss","vietnam_net"),"Góc nhìn thẳng");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageDoiSong()
     {
         title="ĐỜI SỐNG & PHÁP LUẬT";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/trang-chu.rss","doisong_phapluat"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/tin-the-gioi.rss","doisong_phapluat"),"Thế giới");
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/tin-trong-nuoc.rss","doisong_phapluat"),"Trong nước");
@@ -286,13 +273,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/doi-song.rss","doisong_phapluat"),"Đời sống");
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/san-pham.rss","doisong_phapluat"),"Sản phẩm");
         pagerAdapter.AddFragment(new NewsFragment("http://www.doisongphapluat.com/can-biet.rss","doisong_phapluat"),"Cần biết");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageNguoiDuaTin()
     {
         title="NGƯỜI ĐƯA TIN";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/trang-chu.rss","nguoi_dua_tin"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/phap-luat.rss","nguoi_dua_tin"),"Pháp luật");
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/nhip-song.rss","nguoi_dua_tin"),"Nhịp sống");
@@ -308,14 +292,11 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/da-chieu.rss","nguoi_dua_tin"),"Đa chiều");
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/cong-nghe.rss","nguoi_dua_tin"),"Công nghệ");
         pagerAdapter.AddFragment(new NewsFragment("https://www.nguoiduatin.vn/tin-cu.rss","nguoi_dua_tin"),"Tin cũ");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
 
     }
     private void PageNgoiSao()
     {
         title="NGÔI SAO";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/hau-truong.rss","ngoi_sao"),"Hậu trường");
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/ben-le.rss","ngoi_sao"),"Bên lề");
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/thoi-cuoc.rss","ngoi_sao"),"Thời cuộc");
@@ -344,14 +325,11 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/cam-nang.rss","ngoi_sao"),"Cẩm nang");
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/anh-cuoi.rss","ngoi_sao"),"Ảnh cưới");
         pagerAdapter.AddFragment(new NewsFragment("https://ngoisao.net/rss/chia-se.rss","ngoi_sao"),"Chia sẻ");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
 
     }
     private void PageGenk()
     {
         title="GENK";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/trang-chu.rss","genk"),"Trang chủ");
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/mmo.rss","genk"),"MMO");
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/thi-truong.rss","genk"),"Thị trường");
@@ -360,13 +338,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/mobile-social.rss","genk"),"Mobile");
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/gaming-gear.rss","genk"),"Gaming Gear");
         pagerAdapter.AddFragment(new NewsFragment("http://gamek.vn/manga-film.rss","genk"),"Manga Film");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageSoHa()
     {
         title="SOHA";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/giai-tri.rss","so_ha"),"Giải trí");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/the-thao.rss","so_ha"),"Thể thao");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/thoi-su.rss","so_ha"),"Thời sự");
@@ -379,13 +354,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/infographic.rss","so_ha"),"Info Graphic");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/kham-pha.rss","so_ha"),"Khám phá");
         pagerAdapter.AddFragment(new NewsFragment("http://soha.vn/doi-song.rss","so_ha"),"Đời sống");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     private void PageVov()
     {
         title="VOV.VN";
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/chinh-tri-209.rss","vov"),"Chính trị");
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/doi-song-218.rss","vov"),"Đời sống");
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/vov-binh-luan-352.rss","vov"),"Bình luận");
@@ -402,8 +374,6 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/media-357.rss","vov"),"Media");
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/oto-xe-may-423.rss","vov"),"Xe");
         pagerAdapter.AddFragment(new NewsFragment("https://vov.vn/rss/e-magazine-470.rss","vov"),"E-Magazine");
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -443,6 +413,10 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
                         {
                             FilterTypeNews();
                         }
+                        else
+                            if(buttonIndex==2)
+                            {
+                            }
                     }
                 })
                 .init(boomMenuButton);
@@ -453,9 +427,14 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         dialog.setContentView(R.layout.dialog_type_news);
         ListView listType = dialog.findViewById(R.id.listTypeNews);
         ArrayList<TypeItem> arrTypeNews = new ArrayList<>();
-        TypeItem typeItem = new TypeItem();
-        typeItem.setTypeNews("Test thu");
-        arrTypeNews.add(typeItem);
+
+        for(int i=0; i <=12; i++)
+        {
+            TypeItem typeItem = new TypeItem();
+            typeItem.setTypeNews("Test thu");
+            arrTypeNews.add(typeItem);
+        }
+
         TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this,R.layout.layout_type_news,arrTypeNews);
         listType.setAdapter(typeAdapter);
         dialog.show();
@@ -463,10 +442,27 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
 
     @Override
     public void PosList(int pos) {
+        if(arrPos.isEmpty())
+        {
+            arrPos.add(pos);
+        }
+        else
+        {
+            if(!arrPos.contains(pos))
+            {
+                arrPos.add(pos);
+            }
+        }
         Toast.makeText(this, pos+"", Toast.LENGTH_SHORT).show();
     }
 
     public void ClickOKButton(View view) {
         dialog.cancel();
+        for(int i=0;i<arrPos.size();i++)
+        {
+            pagerAdapter.RemoveFragment(arrPos.get(i));
+        }
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/select_type"
                 android:padding="@dimen/_20sdp"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_13ssp"
                 android:layout_centerInParent="true"
                 android:id="@+id/txtTitleSelectType"
                 android:textColor="#ffffff"/>
@@ -29,7 +29,7 @@
         <ListView
             android:layout_below="@id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp"
+            android:layout_height="@dimen/_200sdp"
             android:id="@+id/listTypeNews"/>
     </RelativeLayout>
     <RelativeLayout

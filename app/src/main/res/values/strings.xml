@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">NewsApp</string>
     <string name="note_name_app">ỨNG DỤNG ĐỌC TIN TỨC</string>
-    <string name="select_type">Chọn thể loại tin tức bạn yêu thích</string>
+    <string name="select_type">Chọn thể loại tin tức yêu thích :</string>
 </resources>
