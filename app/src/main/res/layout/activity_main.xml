@@ -15,7 +15,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_35sdp"
             android:background="@color/color_bg"
             app:title="ZING NEWS"
             app:titleTextColor="@color/color_title" />
@@ -64,7 +64,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/_10sdp"
         app:boom_inActionBar="false"
-        app:boom_button_color="@color/color_blue"
+        app:boom_button_color="@color/color_title"
         app:boom_button_pressed_color="@color/color_title" />
 
 

@@ -415,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
         int[][] subButtonColors = new int[3][2];
         for (int i = 0; i < 3; i++) {
-            subButtonColors[i][1] = ContextCompat.getColor(this, R.color.colorDarkGray);
+            subButtonColors[i][1] = ContextCompat.getColor(this, R.color.color_blue);
             subButtonColors[i][0] = Util.getInstance().getPressedColor(subButtonColors[i][1]);
         }
 

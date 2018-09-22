@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activity.MainActivity"
-            android:hardwareAccelerated="true"/>
+            android:hardwareAccelerated="true" />
         <activity
             android:name=".Activity.PopupActivity"
             android:theme="@style/AppTheme.Popup" />
@@ -30,7 +30,8 @@
         <activity android:name=".Activity.WebActivity" />
         <activity
             android:name=".Activity.SelectPageActivity"
-            android:hardwareAccelerated="true"></activity>
+            android:hardwareAccelerated="true" />
+        <activity android:name=".Activity.YoutubeActivity"></activity>
     </application>
 
 </manifest>
