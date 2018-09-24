@@ -94,8 +94,8 @@ public class NewsFragment extends Fragment {
                 case "nguoi_dua_tin":
                     SetPageNguoiDuaTin(url_rss);
                     break;
-                case "tuoi_tre":
-                    SetPageTuoiTre(url_rss);
+                case "ngoi_sao":
+                    SetPageNgoiSao(url_rss);
                     break;
                 case "genk":
                     SetPageGenk(url_rss);
@@ -339,7 +339,7 @@ public class NewsFragment extends Fragment {
 
     }
 
-    private void SetPageTuoiTre(String url_rss) {
+    private void SetPageNgoiSao(String url_rss) {
         try {
             Document doc = Jsoup.connect(url_rss).get();
             Elements elements = doc.select("item");

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     private ViewPager viewPager;
     private boolean init = false;
     private BoomMenuButton boomMenuButton;
-    private String title="";
+    private String title = "";
     private Dialog dialog;
     private PagerAdapter pagerAdapter;
     private ArrayList<Integer> arrPos;
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         SetPage();
 
     }
-    private void Init()
-    {
+
+    private void Init() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tabLayout = findViewById(R.id.tabLayout);
@@ -64,16 +64,14 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         arrPos = new ArrayList<>();
     }
-    private void SetPage()
-    {
 
-        String page_selected="";
-        if(getIntent() != null)
-        {
+    private void SetPage() {
+
+        String page_selected = "";
+        if (getIntent() != null) {
             page_selected = getIntent().getStringExtra("page_selected");
         }
-        switch (page_selected)
-        {
+        switch (page_selected) {
             case "zing_news":
                 PageZingNews();
                 break;
@@ -115,107 +113,96 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
-    private void PageZingNews()
-    {
-        title="ZING NEWS";
-        for(int i=0;i<Key.length.zing_news;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.zing_news[i],"zing_news"),Key.title.zing_news[i]);
+
+    private void PageZingNews() {
+        title = Key.namePage.zing_news;
+        for (int i = 0; i < Key.length.zing_news; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.zing_news[i], "zing_news"), Key.title.zing_news[i]);
         }
     }
-    private void PageVnExpress()
-    {
-        title="VN EXPRESS";
-        for(int i=0;i<Key.length.vn_express;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vn_express[i],"vn_express"),Key.title.vn_express[i]);
+
+    private void PageVnExpress() {
+        title = Key.namePage.vn_express;
+        for (int i = 0; i < Key.length.vn_express; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.vn_express[i], "vn_express"), Key.title.vn_express[i]);
         }
     }
-    private void PageDanTri()
-    {
-        title="DÂN TRÍ";
-        for(int i=0;i<Key.length.dan_tri;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.dan_tri[i],"dan_tri"),Key.title.dan_tri[i]);
+
+    private void PageDanTri() {
+        title = Key.namePage.dan_tri;
+        for (int i = 0; i < Key.length.dan_tri; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.dan_tri[i], "dan_tri"), Key.title.dan_tri[i]);
         }
     }
-    private void Page24h()
-    {
-        title="24H";
-        for(int i=0;i<Key.length.hai_tu_gio;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.hai_tu_gio[i],"24h"),Key.title.hai_tu_gio[i]);
+
+    private void Page24h() {
+        title = Key.namePage.hai_tu_gio;
+        for (int i = 0; i < Key.length.hai_tu_gio; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.hai_tu_gio[i], "24h"), Key.title.hai_tu_gio[i]);
         }
 
     }
-    private void PageKenh14()
-    {
-        title="KÊNH 14";
-        for(int i=0;i<Key.length.kenh_14;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.kenh_14[i],"kenh_14"),Key.title.kenh_14[i]);
+
+    private void PageKenh14() {
+        title = Key.namePage.kenh_14;
+        for (int i = 0; i < Key.length.kenh_14; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.kenh_14[i], "kenh_14"), Key.title.kenh_14[i]);
         }
 
     }
-    private void PageVietNameNet()
-    {
-        title="VIETNAM.NET";
-        for(int i=0;i<Key.length.vietnam_net;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vietnam_net[i],"vietnam_net"),Key.title.vietnam_net[i]);
+
+    private void PageVietNameNet() {
+        title = Key.namePage.vietnam_net;
+        for (int i = 0; i < Key.length.vietnam_net; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.vietnam_net[i], "vietnam_net"), Key.title.vietnam_net[i]);
         }
 
     }
-    private void PageDoiSong()
-    {
-        title="ĐỜI SỐNG & PHÁP LUẬT";
-        for(int i=0;i<Key.length.doi_song;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.doi_song[i],"doisong_phapluat"),Key.title.doi_song[i]);
+
+    private void PageDoiSong() {
+        title = Key.namePage.doi_song;
+        for (int i = 0; i < Key.length.doi_song; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.doi_song[i], "doisong_phapluat"), Key.title.doi_song[i]);
         }
 
     }
-    private void PageNguoiDuaTin()
-    {
-        title="NGƯỜI ĐƯA TIN";
-        for(int i=0;i<Key.length.nguoi_dua_tin;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.nguoi_dua_tin[i],"nguoi_dua_tin"),Key.title.nguoi_dua_tin[i]);
+
+    private void PageNguoiDuaTin() {
+        title = Key.namePage.nguoi_dua_tin;
+        for (int i = 0; i < Key.length.nguoi_dua_tin; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.nguoi_dua_tin[i], "nguoi_dua_tin"), Key.title.nguoi_dua_tin[i]);
         }
     }
-    private void PageNgoiSao()
-    {
-        title="NGÔI SAO";
-        for(int i=0;i<Key.length.vn_express;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.ngoi_sao[i],"ngoi_sao"),Key.title.ngoi_sao[i]);
+
+    private void PageNgoiSao() {
+        title = Key.namePage.ngoi_sao;
+        for (int i = 0; i < Key.length.vn_express; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.ngoi_sao[i], "ngoi_sao"), Key.title.ngoi_sao[i]);
         }
     }
-    private void PageGenk()
-    {
-        title="GENK";
-        for(int i=0;i<Key.length.genk;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.genk[i],"genk"),Key.title.genk[i]);
+
+    private void PageGenk() {
+        title = Key.namePage.genk;
+        for (int i = 0; i < Key.length.genk; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.genk[i], "genk"), Key.title.genk[i]);
         }
 
     }
-    private void PageSoHa()
-    {
-        title="SOHA";
-        for(int i=0;i<Key.length.so_ha;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.so_ha[i],"so_ha"),Key.title.so_ha[i]);
+
+    private void PageSoHa() {
+        title = Key.namePage.so_ha;
+        for (int i = 0; i < Key.length.so_ha; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.so_ha[i], "so_ha"), Key.title.so_ha[i]);
         }
     }
-    private void PageVov()
-    {
-        title="VOV.VN";
-        for(int i=0;i<Key.length.vov;i++)
-        {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vov[i],"vov"),Key.title.vov[i]);
+
+    private void PageVov() {
+        title = Key.namePage.vov;
+        for (int i = 0; i < Key.length.vov; i++) {
+            pagerAdapter.AddFragment(new NewsFragment(Key.url.vov[i], "vov"), Key.title.vov[i]);
         }
     }
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -241,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         }
 
         new BoomMenuButton.Builder()
-                .subButtons(subButtonDrawables,subButtonColors,subButtonTexts)
+                .subButtons(subButtonDrawables, subButtonColors, subButtonTexts)
                 .button(ButtonType.HAM)
                 .boom(BoomType.PARABOLA)
                 .place(PlaceType.HAM_3_1)
@@ -250,34 +237,31 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
                 .onSubButtonClick(new BoomMenuButton.OnSubButtonClickListener() {
                     @Override
                     public void onClick(int buttonIndex) {
-                        if(buttonIndex==1)
-                        {
+                        if (buttonIndex == 1) {
                             FilterTypeNews();
+                        } else if (buttonIndex == 2) {
                         }
-                        else
-                            if(buttonIndex==2)
-                            {
-                            }
                     }
                 })
                 .init(boomMenuButton);
     }
-    private void FilterTypeNews()
-    {
+
+    private void FilterTypeNews() {
         dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_type_news);
         RecyclerView recyclerView = dialog.findViewById(R.id.recyclerView);
         ArrayList<TypeItem> arrTypeNews = new ArrayList<>();
-
-        for(int i=0; i <=27; i++)
-        {
+        int lenghtTitle = 0;
+        switch (title) {
+        }
+        for (int i = 0; i <= 27; i++) {
             TypeItem typeItem = new TypeItem();
-            typeItem.setTypeNews("View "+i);
+            typeItem.setTypeNews("View " + i);
             arrTypeNews.add(typeItem);
         }
 
-        TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this,arrTypeNews);
-        GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this,2);
+        TypeAdapter typeAdapter = new TypeAdapter(MainActivity.this, arrTypeNews);
+        GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(typeAdapter);
@@ -286,24 +270,20 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
 
     @Override
     public void PosList(int pos) {
-        if(arrPos.isEmpty())
-        {
+        if (arrPos.isEmpty()) {
             arrPos.add(pos);
-        }
-        else
-        {
-            if(!arrPos.contains(pos))
-            {
+        } else {
+            if (!arrPos.contains(pos)) {
                 arrPos.add(pos);
             }
         }
-        Toast.makeText(this, pos+"", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, pos + "", Toast.LENGTH_SHORT).show();
     }
 
     public void ClickOKButton(View view) {
         dialog.cancel();
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        if(!arrPos.isEmpty()) {
+        if (!arrPos.isEmpty()) {
             for (int i = 1; i <= arrPos.size(); i++) {
                 //pagerAdapter.AddFragment();
             }

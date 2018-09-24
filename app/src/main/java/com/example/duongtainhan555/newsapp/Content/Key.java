@@ -15,6 +15,20 @@ public final class Key {
         public static final int so_ha = 12;
         public static final int vov = 16;
     }
+    public static final class namePage{
+        public static final String zing_news = "ZING NEWS";
+        public static final String vn_express = "VN EXPRESS";
+        public static final String dan_tri = "DÂN TRÍ";
+        public static final String hai_tu_gio = "24H";
+        public static final String kenh_14 = "KÊNH 14";
+        public static final String vietnam_net = "VIETNAM.NET";
+        public static final String doi_song = "ĐỜI SỐNG & PHÁP LUẬT";
+        public static final String nguoi_dua_tin = "NGƯỜI ĐƯA TIN";
+        public static final String ngoi_sao = "NGÔI SAO";
+        public static final String genk = "GENK";
+        public static final String so_ha = "SOHA";
+        public static final String vov = "VOV.VN";
+    }
     public static final class url
     {
         public static final String zing_news[]={
