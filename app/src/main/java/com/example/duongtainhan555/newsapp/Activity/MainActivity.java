@@ -17,8 +17,10 @@ import android.widget.Toast;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.NewsFragment;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.PagerAdapter;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.TypeAdapter;
+import com.example.duongtainhan555.newsapp.Content.Key;
 import com.example.duongtainhan555.newsapp.Interface.PositionListView;
 import com.example.duongtainhan555.newsapp.Models.News.TypeItem;
+import com.example.duongtainhan555.newsapp.Models.Page.PageNews;
 import com.example.duongtainhan555.newsapp.R;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Types.BoomType;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     private Dialog dialog;
     private PagerAdapter pagerAdapter;
     private ArrayList<Integer> arrPos;
+    private PageNews pageNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
