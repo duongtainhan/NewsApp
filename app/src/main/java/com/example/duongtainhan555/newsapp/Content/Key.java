@@ -9,7 +9,7 @@ public final class Key {
         public static final int kenh_14 = 11;
         public static final int vietnam_net = 17;
         public static final int doi_song = 20;
-        public static final int nguoi_duatin = 15;
+        public static final int nguoi_dua_tin = 15;
         public static final int ngoi_sao = 28;
         public static final int genk = 7;
         public static final int so_ha = 12;
