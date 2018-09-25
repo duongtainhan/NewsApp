@@ -1,8 +1,10 @@
 package com.example.duongtainhan555.newsapp.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,6 +62,14 @@ public class YoutubeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        listVideo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(YoutubeActivity.this, YoutubePlayer.class);
+                intent.putExtra("video ID",arrayItems.get(position).getId().getVideoId());
+                startActivity(intent);
             }
         });
     }

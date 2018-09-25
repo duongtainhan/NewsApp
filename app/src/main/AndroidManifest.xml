@@ -28,7 +28,8 @@
         <activity
             android:name=".Activity.SelectPageActivity"
             android:hardwareAccelerated="true" />
-        <activity android:name=".Activity.YoutubeActivity"></activity>
+        <activity android:name=".Activity.YoutubeActivity" />
+        <activity android:name=".Activity.YoutubePlayer"></activity>
     </application>
 
 </manifest>
