@@ -2,4 +2,16 @@
     <string name="app_name">NewsApp</string>
     <string name="note_name_app">ỨNG DỤNG ĐỌC TIN TỨC</string>
     <string name="select_type">Chọn thể loại tin tức yêu thích :</string>
+    <string name="zing_news">ZING NEWS</string>
+    <string name="vn_express">VN EXPRESS</string>
+    <string name="dan_tri">DÂN TRÍ</string>
+    <string name="hai_tu_gio">24H</string>
+    <string name="kenh_14">KÊNH 14</string>
+    <string name="vietnam_net">VIETNAM.NET</string>
+    <string name="doi_song">ĐỜI SỐNG PHÁP LUẬT</string>
+    <string name="nguoi_dua_">NGƯỜI ĐƯA TIN</string>
+    <string name="ngoi_sao">NGÔI SAO</string>
+    <string name="genk">GENK</string>
+    <string name="so_ha">SOHA</string>
+    <string name="vov">VOV</string>
 </resources>
