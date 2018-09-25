@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_below="@id/relative"
-    android:background="@color/transparent"
+    android:background="@drawable/background_custom"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -11,21 +11,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/relative"
         android:layout_alignParentTop="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/relativeLayout"
-            android:background="@color/color_blue">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/select_type"
-                android:padding="@dimen/_5sdp"
-                android:textSize="@dimen/_13ssp"
-                android:layout_centerInParent="true"
-                android:id="@+id/txtTitleSelectType"
-                android:textColor="#ffffff"/>
-        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:layout_below="@id/relativeLayout"
             android:layout_width="match_parent"

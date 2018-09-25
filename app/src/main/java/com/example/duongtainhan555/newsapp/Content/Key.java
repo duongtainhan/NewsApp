@@ -10,7 +10,7 @@ public final class Key {
         public static final int vietnam_net = 17;
         public static final int doi_song = 20;
         public static final int nguoi_dua_tin = 15;
-        public static final int ngoi_sao = 28;
+        public static final int ngoi_sao = 24;
         public static final int genk = 7;
         public static final int so_ha = 12;
         public static final int vov = 16;
@@ -234,11 +234,7 @@ public final class Key {
                 "https://ngoisao.net/rss/game.rss",
                 "https://ngoisao.net/rss/choi-blog.rss",
                 "https://ngoisao.net/rss/thi-anh.rss",
-                "https://ngoisao.net/rss/miss.rss",
-                "https://ngoisao.net/rss/co-dau.rss",
-                "https://ngoisao.net/rss/cam-nang.rss",
-                "https://ngoisao.net/rss/anh-cuoi.rss",
-                "https://ngoisao.net/rss/chia-se.rss"
+                "https://ngoisao.net/rss/miss.rss"
         };
         public static final String genk[]={
                 "http://gamek.vn/trang-chu.rss",
@@ -474,11 +470,7 @@ public final class Key {
                 "Game",
                 "Blog",
                 "Thi ảnh",
-                "Miss",
-                "Cô dâu",
-                "Cẩm nang",
-                "Ảnh cưới",
-                "Chia sẻ"
+                "Miss"
         };
         public static final String genk[]={
                 "Trang chủ",

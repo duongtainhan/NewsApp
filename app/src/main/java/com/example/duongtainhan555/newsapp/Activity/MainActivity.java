@@ -1,6 +1,9 @@
 package com.example.duongtainhan555.newsapp.Activity;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -17,11 +20,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.NewsFragment;
+import com.example.duongtainhan555.newsapp.Adapter_Fragment.PageItemAdapter;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.PagerAdapter;
 import com.example.duongtainhan555.newsapp.Adapter_Fragment.TypeAdapter;
 import com.example.duongtainhan555.newsapp.Content.Key;
 import com.example.duongtainhan555.newsapp.Interface.PositionListView;
 import com.example.duongtainhan555.newsapp.Models.News.TypeItem;
+import com.example.duongtainhan555.newsapp.Models.Page.PageItem;
 import com.example.duongtainhan555.newsapp.R;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.Types.BoomType;
@@ -298,7 +303,8 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     }
     private void SelectPageNews()
     {
-        //
+        Intent intent = new Intent(MainActivity.this,SelectPageActivity.class);
+        startActivity(intent);
     }
     private void FilterTypeNews() {
         dialog = new Dialog(MainActivity.this);
@@ -315,6 +321,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(typeAdapter);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
     @Override
