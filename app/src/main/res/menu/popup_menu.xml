@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Tìm kiếm trên Youtube"
+        android:title="Tìm kiếm video liên quan"
         android:id="@+id/itemSearch"/>
 </menu>

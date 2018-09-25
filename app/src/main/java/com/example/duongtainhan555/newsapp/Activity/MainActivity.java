@@ -3,6 +3,7 @@ package com.example.duongtainhan555.newsapp.Activity;
 import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,7 @@ import com.nightonke.boommenu.Types.PlaceType;
 import com.nightonke.boommenu.Util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements PositionListView {
@@ -44,8 +46,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     private PagerAdapter pagerAdapter;
     private ArrayList<Integer> arrPos;
     private String titlePage[];
-    private String urlPage[];
-    private String namePage;
+    private List<Fragment> listFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +64,12 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         boomMenuButton = findViewById(R.id.boom);
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         arrPos = new ArrayList<>();
     }
 
     private void SetPage() {
-
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        listFragment = new ArrayList<>();
         String page_selected = "";
         if (getIntent() != null) {
             page_selected = getIntent().getStringExtra("page_selected");
@@ -117,123 +118,135 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
     }
 
     private void PageZingNews() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.zing_news;
         for (int i = 0; i < Key.length.zing_news; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.zing_news[i], Key.namePage.zing_news), Key.title.zing_news[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.zing_news[i], Key.namePage.zing_news);
+            pagerAdapter.AddFragment(newsFragment, Key.title.zing_news[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.zing_news;
-        urlPage = Key.url.zing_news;
-        namePage = Key.namePage.zing_news;
     }
 
     private void PageVnExpress() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.vn_express;
         for (int i = 0; i < Key.length.vn_express; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vn_express[i],Key.namePage.vn_express), Key.title.vn_express[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.vn_express[i], Key.namePage.vn_express);
+            pagerAdapter.AddFragment(newsFragment, Key.title.vn_express[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.vn_express;
-        urlPage = Key.url.vn_express;
-        namePage = Key.namePage.vn_express;
     }
 
     private void PageDanTri() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.dan_tri;
         for (int i = 0; i < Key.length.dan_tri; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.dan_tri[i], Key.namePage.dan_tri), Key.title.dan_tri[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.dan_tri[i], Key.namePage.dan_tri);
+            pagerAdapter.AddFragment(newsFragment, Key.title.dan_tri[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.dan_tri;
-        urlPage = Key.url.dan_tri;
-        namePage = Key.namePage.dan_tri;
     }
 
     private void Page24h() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.hai_tu_gio;
         for (int i = 0; i < Key.length.hai_tu_gio; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.hai_tu_gio[i], Key.namePage.hai_tu_gio), Key.title.hai_tu_gio[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.hai_tu_gio[i], Key.namePage.hai_tu_gio);
+            pagerAdapter.AddFragment(newsFragment, Key.title.hai_tu_gio[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.hai_tu_gio;
-        urlPage = Key.url.hai_tu_gio;
-        namePage = Key.namePage.hai_tu_gio;
     }
 
     private void PageKenh14() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.kenh_14;
         for (int i = 0; i < Key.length.kenh_14; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.kenh_14[i], Key.namePage.kenh_14), Key.title.kenh_14[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.kenh_14[i], Key.namePage.kenh_14);
+            pagerAdapter.AddFragment(newsFragment, Key.title.kenh_14[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.kenh_14;
-        urlPage = Key.url.kenh_14;
-        namePage = Key.namePage.kenh_14;
     }
 
     private void PageVietNameNet() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.vietnam_net;
         for (int i = 0; i < Key.length.vietnam_net; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vietnam_net[i], Key.namePage.vietnam_net), Key.title.vietnam_net[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.vietnam_net[i], Key.namePage.vietnam_net);
+            pagerAdapter.AddFragment(newsFragment, Key.title.vietnam_net[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.vietnam_net;
-        urlPage = Key.url.vietnam_net;
-        namePage = Key.namePage.vietnam_net;
     }
 
     private void PageDoiSong() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.doi_song;
         for (int i = 0; i < Key.length.doi_song; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.doi_song[i], Key.namePage.doi_song), Key.title.doi_song[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.doi_song[i], Key.namePage.doi_song);
+            pagerAdapter.AddFragment(newsFragment, Key.title.doi_song[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.doi_song;
-        urlPage = Key.url.doi_song;
-        namePage = Key.namePage.doi_song;
     }
 
     private void PageNguoiDuaTin() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.nguoi_dua_tin;
         for (int i = 0; i < Key.length.nguoi_dua_tin; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.nguoi_dua_tin[i], Key.namePage.nguoi_dua_tin), Key.title.nguoi_dua_tin[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.nguoi_dua_tin[i], Key.namePage.nguoi_dua_tin);
+            pagerAdapter.AddFragment(newsFragment, Key.title.nguoi_dua_tin[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.nguoi_dua_tin;
-        urlPage = Key.url.nguoi_dua_tin;
-        namePage = Key.namePage.nguoi_dua_tin;
     }
 
     private void PageNgoiSao() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.ngoi_sao;
-        for (int i = 0; i < Key.length.vn_express; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.ngoi_sao[i], Key.namePage.ngoi_sao), Key.title.ngoi_sao[i]);
+        for (int i = 0; i < Key.length.ngoi_sao; i++) {
+            NewsFragment newsFragment = new NewsFragment(Key.url.ngoi_sao[i], Key.namePage.ngoi_sao);
+            pagerAdapter.AddFragment(newsFragment, Key.title.ngoi_sao[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.ngoi_sao;
-        urlPage = Key.url.ngoi_sao;
-        namePage = Key.namePage.ngoi_sao;
     }
 
     private void PageGenk() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.genk;
         for (int i = 0; i < Key.length.genk; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.genk[i], Key.namePage.genk), Key.title.genk[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.genk[i], Key.namePage.genk);
+            pagerAdapter.AddFragment(newsFragment, Key.title.genk[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.genk;
-        urlPage = Key.url.genk;
-        namePage = Key.namePage.genk;
     }
 
     private void PageSoHa() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.so_ha;
         for (int i = 0; i < Key.length.so_ha; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.so_ha[i], Key.namePage.so_ha), Key.title.so_ha[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.so_ha[i], Key.namePage.so_ha);
+            pagerAdapter.AddFragment(newsFragment, Key.title.so_ha[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.so_ha;
-        urlPage = Key.url.so_ha;
-        namePage = Key.namePage.so_ha;
     }
 
     private void PageVov() {
+        listFragment.clear();
         titleToolbar = Key.nameTitle.vov;
         for (int i = 0; i < Key.length.vov; i++) {
-            pagerAdapter.AddFragment(new NewsFragment(Key.url.vov[i], Key.namePage.vov), Key.title.vov[i]);
+            NewsFragment newsFragment = new NewsFragment(Key.url.vov[i], Key.namePage.vov);
+            pagerAdapter.AddFragment(newsFragment, Key.title.vov[i]);
+            listFragment.add(newsFragment);
         }
         titlePage = Key.title.vov;
-        urlPage = Key.url.vov;
-        namePage = Key.namePage.vov;
     }
 
     @Override
@@ -315,12 +328,17 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         }
     }
 
+    @Override
+    public void RemovePos(int pos) {
+        arrPos.remove((Integer) pos);
+    }
+
     public void ClickOKButton(View view) {
         dialog.cancel();
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         if (!arrPos.isEmpty()) {
+            PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
             for (int i = 0; i < arrPos.size(); i++) {
-                pagerAdapter.AddFragment(new NewsFragment(urlPage[arrPos.get(i)], namePage), titlePage[arrPos.get(i)]);
+                pagerAdapter.AddFragment(listFragment.get(i), titlePage[arrPos.get(i)]);
             }
             viewPager.setAdapter(pagerAdapter);
             tabLayout.setupWithViewPager(viewPager);

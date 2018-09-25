@@ -43,8 +43,16 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.ViewHolder> {
         viewHolder.cbTypeNews.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                positionListView = (PositionListView) buttonView.getContext();
-                positionListView.PosList(viewHolder.getAdapterPosition());
+                if(buttonView.isChecked())
+                {
+                    positionListView = (PositionListView) buttonView.getContext();
+                    positionListView.PosList(viewHolder.getAdapterPosition());
+                }
+                else if(!buttonView.isChecked())
+                {
+                    positionListView = (PositionListView) buttonView.getContext();
+                    positionListView.RemovePos(viewHolder.getAdapterPosition());
+                }
             }
         });
     }
