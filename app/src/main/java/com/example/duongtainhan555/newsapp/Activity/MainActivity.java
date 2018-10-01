@@ -261,19 +261,18 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
         if (init) return;
         init = true;
 
-        Drawable[] subButtonDrawables = new Drawable[3];
+        Drawable[] subButtonDrawables = new Drawable[2];
         int[] drawablesResource = new int[]{
                 R.drawable.ic_select_page,
-                R.drawable.ic_filter,
-                R.drawable.ic_seen
+                R.drawable.ic_filter
         };
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
             subButtonDrawables[i] = ContextCompat.getDrawable(this, drawablesResource[i]);
 
-        String[] subButtonTexts = new String[]{"Chọn trang báo", "Lọc thể loại yêu thích", "Tin tức đã xem"};
+        String[] subButtonTexts = new String[]{"Chọn trang báo", "Lọc thể loại yêu thích"};
 
-        int[][] subButtonColors = new int[3][2];
-        for (int i = 0; i < 3; i++) {
+        int[][] subButtonColors = new int[2][2];
+        for (int i = 0; i < 2; i++) {
             subButtonColors[i][1] = ContextCompat.getColor(this, R.color.color_blue);
             subButtonColors[i][0] = Util.getInstance().getPressedColor(subButtonColors[i][1]);
         }
@@ -282,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
                 .subButtons(subButtonDrawables, subButtonColors, subButtonTexts)
                 .button(ButtonType.HAM)
                 .boom(BoomType.PARABOLA)
-                .place(PlaceType.HAM_3_1)
+                .place(PlaceType.HAM_2_1)
                 .subButtonTextColor(ContextCompat.getColor(this, R.color.colorDarkGray))
                 .subButtonsShadow(Util.getInstance().dp2px(2), Util.getInstance().dp2px(2))
                 .onSubButtonClick(new BoomMenuButton.OnSubButtonClickListener() {
@@ -293,9 +292,8 @@ public class MainActivity extends AppCompatActivity implements PositionListView 
                             SelectPageNews();
                         }
                         else
-                        if (buttonIndex == 1) {
+                            {
                             FilterTypeNews();
-                        } else if (buttonIndex == 2) {
                         }
                     }
                 })
